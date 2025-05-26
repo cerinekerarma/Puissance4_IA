@@ -2,7 +2,7 @@ import Puissance4.*;
 
 import java.util.*;
 
-public class Puissance4 {
+public class Puissance4Terminal {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -112,12 +112,16 @@ public class Puissance4 {
                             break;
                         case MINIMAX:
                         case ALPHA_BETA:
-                            System.out.print("Choisissez la profondeur p : ");
-                            joueur.setParametre(scanner.nextInt());
+                            /*System.out.print("Choisissez la profondeur p : ");
+                            joueur.setParametre(scanner.nextInt());*/
+                            int profondeur = 5;
+                            joueur.setParametre(profondeur);
                             break;
                         case MCTS:
-                            System.out.print("Choisissez le nombre d'itérations : ");
-                            joueur.setParametre(scanner.nextInt());
+                            /*System.out.print("Choisissez le nombre d'itérations : ");
+                            joueur.setParametre(scanner.nextInt());*/
+                            int nbIterations = 5;
+                            joueur.setParametre(nbIterations);
                             break;
                         default:
                             System.out.println("Erreur, l'algorithme n'existe pas ! L'IA utilisera Aleatoire.");

@@ -139,6 +139,7 @@ public class Plateau {
         return evaluer(jetonMax) - evaluer(jetonMin);
     }
 
+    // Notre fonction d'evaluation (meme que celle proposée dans le cours)
     public int evaluer(int jetonJoueur) {
         int[] jetonsAlignes = compterJetonsAlignes(jetonJoueur);
         return 1000 * jetonsAlignes[4] + 50 * jetonsAlignes[3] + 5 * jetonsAlignes[2] + 1 * jetonsAlignes[1];

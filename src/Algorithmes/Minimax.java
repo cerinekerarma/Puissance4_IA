@@ -53,7 +53,7 @@ public class Minimax {
                 if (u >= beta) {
                     return new ActionValeur(u, a);
                 }
-                alpha = Puissance4_algos.getMax(alpha, u);
+                alpha = Puissance4Logique.getMax(alpha, u);
             }
         }
 
@@ -80,7 +80,7 @@ public class Minimax {
                 if (u <= alpha) {
                     return new ActionValeur(u, a);
                 }
-                beta = Puissance4_algos.getMin(beta, u);
+                beta = Puissance4Logique.getMin(beta, u);
             }
         }
 

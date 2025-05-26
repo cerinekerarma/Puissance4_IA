@@ -1,7 +1,7 @@
 package Puissance4;
 
 // Classe utilitaire contenant des méthodes pour le jeu Puissance 4
-public class Puissance4_algos {
+public class Puissance4Logique {
 
     // Méthode pour cloner un tableau 2D
     public static int[][] clonerTableau2D(int[][] tableau) {

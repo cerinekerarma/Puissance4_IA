@@ -54,14 +54,14 @@ public class Plateau {
     }
 
     public Plateau clone() {
-        return new Plateau(this.nbLignes, this.nbColonnes, this.etat.getDernierJoueur(), Puissance4_algos.clonerTableau2D(this.grille));
+        return new Plateau(this.nbLignes, this.nbColonnes, this.etat.getDernierJoueur(), Puissance4Logique.clonerTableau2D(this.grille));
     }
 
     public int[] compterJetonsAlignes(int jetonJoueur) {
         int[] compte = new int[5];
-        Puissance4_algos.calculerJetonsAlignesLigne(this, jetonJoueur, compte);
-        Puissance4_algos.calculerJetonsAlignesColonne(this, jetonJoueur, compte);
-        Puissance4_algos.calculerJetonsAlignesDiagonale(this, jetonJoueur, compte);
+        Puissance4Logique.calculerJetonsAlignesLigne(this, jetonJoueur, compte);
+        Puissance4Logique.calculerJetonsAlignesColonne(this, jetonJoueur, compte);
+        Puissance4Logique.calculerJetonsAlignesDiagonale(this, jetonJoueur, compte);
         return compte;
     }
 

@@ -1,9 +1,8 @@
-import Algorithmes.*;
 import Puissance4.*;
 
 import java.util.*;
 
-public class Main {
+public class Puissance4 {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -154,7 +153,7 @@ public class Main {
                 {
                     while(true)
                     {
-                        Puissance4_algos.afficher(afficher, "Saisissez le coup du joueur " + jetonActuel);
+                        Puissance4Logique.afficher(afficher, "Saisissez le coup du joueur " + jetonActuel);
                         coup = scanner.nextInt();
                         if(jeu.colonneValide(coup))
                         {
@@ -164,14 +163,14 @@ public class Main {
                     }
 
                     partieFinie = jeu.jouerDansColonne(coup, jetonActuel);
-                    Puissance4_algos.afficher(afficher, "Le joueur " + jetonActuel + " joue en " + coup);
-                    Puissance4_algos.afficher(afficher, "Score = " + jeu.getPlateau().evaluation(jetonActuel, jetonAdversaire));
+                    Puissance4Logique.afficher(afficher, "Le joueur " + jetonActuel + " joue en " + coup);
+                    Puissance4Logique.afficher(afficher, "Score = " + jeu.getPlateau().evaluation(jetonActuel, jetonAdversaire));
                 }
                 else
                 {
                     joueur = joueurs.get(jetonActuel - 1);
                     partieFinie = jeu.jouerIA(joueur, jetonActuel, jetonAdversaire, afficher);
-                    Puissance4_algos.afficher(afficher, "Score = " + jeu.getPlateau().evaluation(jetonActuel, jetonAdversaire));
+                    Puissance4Logique.afficher(afficher, "Score = " + jeu.getPlateau().evaluation(jetonActuel, jetonAdversaire));
                 }
 
                 if(afficher)
@@ -185,14 +184,14 @@ public class Main {
                 }
             }
 
-            Puissance4_algos.afficher(afficher, "");
+            Puissance4Logique.afficher(afficher, "");
             if(partieFinie)
             {
-                Puissance4_algos.afficher(afficher, "La partie est terminée !");
+                Puissance4Logique.afficher(afficher, "La partie est terminée !");
                 int gagnant = jeu.getPlateau().getVainqueur();
                 if(gagnant != 0)
                 {
-                    Puissance4_algos.afficher(afficher, "Le joueur " + gagnant + " a gagné !");
+                    Puissance4Logique.afficher(afficher, "Le joueur " + gagnant + " a gagné !");
                 }
                 return gagnant;
             }

@@ -6,37 +6,36 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Puissance4.*;
-
-public class TestAlphaBetaVSAlphaBeta {
-// si apres avoir lancé, vous avez un outOfMemoryError, changer la capacite de RAM a 4Go: Run > Edit Configurations > VM options : -Xmx4G
+public class TestAlphaBetaVSMinimax {
+    // Si vous avez un OutOfMemoryError, augmentez la RAM :
+    // Run > Edit Configurations > VM options : -Xmx4G
     public static void main(String[] args) {
         // Profondeurs à tester
         int[] profondeurs = {3, 5, 7, 9, 10};
         StringBuilder resultats = new StringBuilder();
 
         // Fichier de sortie
-        String fichierResultats = "resultats/resultats_tests_alphabeta_vs_alphabeta.txt";
+        String fichierResultats = "resultats_tests_alphabeta_vs_minimax.txt";
 
         try (FileWriter writer = new FileWriter(fichierResultats)) {
             // En-tête du fichier
-            writer.write("Résultats des tests AlphaBeta vs AlphaBeta\n\n");
+            writer.write("Résultats des tests AlphaBeta vs Minimax\n\n");
 
             // Tests pour chaque combinaison de profondeurs
             for (int i = 0; i < profondeurs.length; i++) {
-                for (int j = i; j < profondeurs.length; j++) {
-                    int profondeur1 = profondeurs[i];
-                    int profondeur2 = profondeurs[j];
+                for (int j = 0; j < profondeurs.length; j++) {
+                    int profondeurAlphaBeta = profondeurs[i];
+                    int profondeurMinimax = profondeurs[j];
 
-                    // Jouer la partie
-                    int resultat = jouerPartieAlphaBeta(profondeur1, profondeur2);
+                    // Jouer la partie AlphaBeta vs Minimax
+                    int resultat = jouerPartieAlphaBetaVsMinimax(profondeurAlphaBeta, profondeurMinimax);
 
                     // Enregistrer le résultat
                     String resultatPartie = String.format(
-                            "Partie %d\nIA 1 (profondeur = %d) vs IA 2 (profondeur = %d) : %s\n\n",
+                            "Partie %d\nAlphaBeta (profondeur=%d) vs Minimax (profondeur=%d) : %s\n\n",
                             (i * profondeurs.length) + j + 1,
-                            profondeur1,
-                            profondeur2,
+                            profondeurAlphaBeta,
+                            profondeurMinimax,
                             formaterResultat(resultat)
                     );
 
@@ -54,13 +53,13 @@ public class TestAlphaBetaVSAlphaBeta {
         }
     }
 
-    private static int jouerPartieAlphaBeta(int profondeur1, int profondeur2) {
+    private static int jouerPartieAlphaBetaVsMinimax(int profondeurAlphaBeta, int profondeurMinimax) {
         Jeu jeu = Jeu.initialiserJeu();
         List<Joueur> joueurs = new ArrayList<>();
 
-        // Création des deux IA AlphaBeta avec les profondeurs spécifiées
-        joueurs.add(new Joueur(Algorithmes.ALPHA_BETA, profondeur1));
-        joueurs.add(new Joueur(Algorithmes.ALPHA_BETA, profondeur2));
+        // Création des IA - AlphaBeta (Joueur 1) vs Minimax (Joueur 2)
+        joueurs.add(new Joueur(Algorithmes.ALPHA_BETA, profondeurAlphaBeta));
+        joueurs.add(new Joueur(Algorithmes.MINIMAX, profondeurMinimax));
 
         // Démarrer la partie (sans affichage)
         return demarrerPartieSansInterface(jeu, joueurs);
@@ -70,8 +69,10 @@ public class TestAlphaBetaVSAlphaBeta {
         int jetonActuel = 1;
         int jetonAdversaire;
         boolean partieFinie;
+        int tours = 0;
+        final int MAX_TOURS = 100; // Prévention des boucles infinies
 
-        while (true) {
+        while (tours++ < MAX_TOURS) {
             jetonAdversaire = 3 - jetonActuel;
             Joueur joueur = joueurs.get(jetonActuel - 1);
 
@@ -85,13 +86,14 @@ public class TestAlphaBetaVSAlphaBeta {
             // Passer au joueur suivant
             jetonActuel = 3 - jetonActuel;
         }
+        return 0; // Match nul si trop de tours
     }
 
     private static String formaterResultat(int resultat) {
         if (resultat == 1) {
-            return "IA 1 vainqueur";
+            return "AlphaBeta vainqueur";
         } else if (resultat == 2) {
-            return "IA 2 vainqueur";
+            return "Minimax vainqueur";
         } else {
             return "Match nul";
         }

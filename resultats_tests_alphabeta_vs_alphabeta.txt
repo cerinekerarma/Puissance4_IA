@@ -1,0 +1,14 @@
+Résultats des tests AlphaBeta vs AlphaBeta
+
+Partie 1
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 3) : IA 2 vainqueur
+
+Partie 2
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 5) : IA 1 vainqueur
+
+Partie 3
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 7) : IA 1 vainqueur
+
+Partie 4
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 9) : IA 1 vainqueur
+

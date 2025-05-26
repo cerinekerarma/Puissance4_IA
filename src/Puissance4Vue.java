@@ -164,7 +164,7 @@ public class Puissance4Vue {
         statusLabel.setFont(new Font("Arial", Font.BOLD, 16));
         frame.add(statusLabel, BorderLayout.NORTH);
 
-        gamePanel = new JPanel(new GridLayout(6, 7, 0, 0)); // Supprime l'espacement entre les cellules
+        gamePanel = new JPanel(new GridLayout(6, 7, 0, 0));
         gamePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         gamePanel.setBackground(Color.BLUE); // Fond bleu pour le plateau
         frame.add(gamePanel, BorderLayout.CENTER);
@@ -172,7 +172,7 @@ public class Puissance4Vue {
         JPanel buttonPanel = new JPanel(new GridLayout(1, 7));
         columnButtons = new JButton[7];
         for (int i = 0; i < 7; i++) {
-            columnButtons[i] = new JButton("" + (i + 1)); // Affiche juste le numéro de colonne
+            columnButtons[i] = new JButton("" + (i + 1));
             final int column = i ;
             columnButtons[i].addActionListener(e -> {
                 if (!gameFinished && joueurs.get(currentPlayer - 1).estHumain()) {
@@ -207,7 +207,6 @@ public class Puissance4Vue {
         currentPlayer = 3 - currentPlayer;
         statusLabel.setText("Tour du joueur " + currentPlayer);
 
-        // Si le prochain joueur est encore une IA, continuer
         if (!joueurs.get(currentPlayer - 1).estHumain()) {
             Timer timer = new Timer(1000, e -> playAIMove());
             timer.setRepeats(false);
@@ -272,7 +271,6 @@ public class Puissance4Vue {
                         Graphics2D g2d = (Graphics2D) g;
                         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-                        // Dessine un cercle pour le jeton
                         if (grille[finalRow][finalCol] == 1) {
                             g2d.setColor(Color.RED);
                             g2d.fillOval(5, 5, getWidth() - 10, getHeight() - 10);
@@ -280,7 +278,6 @@ public class Puissance4Vue {
                             g2d.setColor(Color.YELLOW);
                             g2d.fillOval(5, 5, getWidth() - 10, getHeight() - 10);
                         } else {
-                            // Case vide - dessine un cercle blanc avec bordure bleue
                             g2d.setColor(Color.WHITE);
                             g2d.fillOval(5, 5, getWidth() - 10, getHeight() - 10);
                             g2d.setColor(Color.BLUE);
@@ -289,7 +286,7 @@ public class Puissance4Vue {
                     }
                 };
                 cell.setPreferredSize(new Dimension(60, 60));
-                cell.setBackground(Color.BLUE); // Fond bleu pour les cases
+                cell.setBackground(Color.BLUE);
                 gamePanel.add(cell);
             }
         }

@@ -15,7 +15,7 @@ public class TestAlphaBetaVSMinimax {
         StringBuilder resultats = new StringBuilder();
 
         // Fichier de sortie
-        String fichierResultats = "resultats_tests_alphabeta_vs_minimax.txt";
+        String fichierResultats = "resultats/resultats_tests_alphabeta_vs_minimax.txt";
 
         try (FileWriter writer = new FileWriter(fichierResultats)) {
             // En-tête du fichier

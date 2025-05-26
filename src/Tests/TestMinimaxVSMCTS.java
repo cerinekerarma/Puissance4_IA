@@ -6,33 +6,33 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestAlphaBetaVSMCTS {
+public class TestMinimaxVSMCTS {
     // Configuration mémoire si nécessaire : -Xmx4G
     public static void main(String[] args) {
-        // Profondeurs à tester
-        int[] profondeursAlphaBeta = {3, 5, 7, 9, 10};
+        // Profondeurs à tester pour Minimax
+        int[] profondeursMinimax = {3, 5, 7, 9, 10};
         int[] iterationsMCTS = {5, 10, 15, 20};
         StringBuilder resultats = new StringBuilder();
 
         // Fichier de sortie
-        String fichierResultats = "resultats/resultats_tests_alphabeta_vs_mcts.txt";
+        String fichierResultats = "resultats_tests_minimax_vs_mcts.txt";
 
         try (FileWriter writer = new FileWriter(fichierResultats)) {
-            writer.write("Résultats des tests AlphaBeta vs MCTS\n\n");
-            writer.write("Format : AlphaBeta(profondeur) vs MCTS(itérations)\n\n");
+            writer.write("Résultats des tests Minimax vs MCTS\n\n");
+            writer.write("Format : Minimax(profondeur) vs MCTS(itérations)\n\n");
 
             int numPartie = 1;
             // Tests pour chaque combinaison
-            for (int profondeurAB : profondeursAlphaBeta) {
+            for (int profondeurMinimax : profondeursMinimax) {
                 for (int iterations : iterationsMCTS) {
                     // Jouer la partie
-                    int resultat = jouerPartieAlphaBetaVsMCTS(profondeurAB, iterations);
+                    int resultat = jouerPartieMinimaxVsMCTS(profondeurMinimax, iterations);
 
                     // Enregistrer le résultat
                     String resultatPartie = String.format(
-                            "Partie %d\nAlphaBeta (profondeur=%d) vs MCTS (iterations=%d) : %s\n\n",
+                            "Partie %d\nMinimax (profondeur=%d) vs MCTS (iterations=%d) : %s\n\n",
                             numPartie++,
-                            profondeurAB,
+                            profondeurMinimax,
                             iterations,
                             formaterResultat(resultat)
                     );
@@ -48,12 +48,12 @@ public class TestAlphaBetaVSMCTS {
         }
     }
 
-    private static int jouerPartieAlphaBetaVsMCTS(int profondeurAB, int iterationsMCTS) {
+    private static int jouerPartieMinimaxVsMCTS(int profondeurMinimax, int iterationsMCTS) {
         Jeu jeu = Jeu.initialiserJeu();
         List<Joueur> joueurs = new ArrayList<>();
 
-        // AlphaBeta (Joueur 1) vs MCTS (Joueur 2)
-        joueurs.add(new Joueur(Algorithmes.ALPHA_BETA, profondeurAB));
+        // Minimax (Joueur 1) vs MCTS (Joueur 2)
+        joueurs.add(new Joueur(Algorithmes.MINIMAX, profondeurMinimax));
         joueurs.add(new Joueur(Algorithmes.MCTS, iterationsMCTS));
 
         return demarrerPartieControlee(jeu, joueurs);
@@ -80,7 +80,7 @@ public class TestAlphaBetaVSMCTS {
 
     private static String formaterResultat(int resultat) {
         switch (resultat) {
-            case 1: return "AlphaBeta vainqueur";
+            case 1: return "Minimax vainqueur";
             case 2: return "MCTS vainqueur";
             default: return "Match nul";
         }

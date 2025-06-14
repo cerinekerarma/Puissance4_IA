@@ -1,0 +1,18 @@
+Résultats des tests AlphaBeta vs Minimax (sur 1000 rounds)
+
+=== Profondeur 1 ===
+AlphaBeta: 100.0% victoires | Minimax: 0.0% victoires | Nuls: 0.0%
+
+=== Profondeur 2 ===
+AlphaBeta: 100.0% victoires | Minimax: 0.0% victoires | Nuls: 0.0%
+
+=== Profondeur 3 ===
+AlphaBeta: 0.0% victoires | Minimax: 100.0% victoires | Nuls: 0.0%
+
+=== Profondeur 4 ===
+AlphaBeta: 100.0% victoires | Minimax: 0.0% victoires | Nuls: 0.0%
+
+=== Profondeur 5 ===
+AlphaBeta: 100.0% victoires | Minimax: 0.0% victoires | Nuls: 0.0%
+
+=== Pr

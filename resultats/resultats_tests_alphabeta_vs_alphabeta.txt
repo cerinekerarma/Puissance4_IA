@@ -1,110 +1,184 @@
 Résultats des tests AlphaBeta vs AlphaBeta
 
+Format : IA 1 (profondeur) vs IA 2 (profondeur) | Vainqueur | Nœuds IA1 | Nœuds IA2 | Temps IA1 (ms) | Temps IA2 (ms)
+
 Partie 1
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 1) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=1) : IA 1 vainqueur
+Nœuds créés - IA1: 56 | IA2: 48
+Temps moyen/coup - IA1: 2.424 ms | IA2: 0.326 ms
 
 Partie 2
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 2) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=2) : IA 2 vainqueur
+Nœuds créés - IA1: 485 | IA2: 499
+Temps moyen/coup - IA1: 0.101 ms | IA2: 0.358 ms
 
 Partie 3
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 3) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=3) : IA 2 vainqueur
+Nœuds créés - IA1: 1440 | IA2: 1581
+Temps moyen/coup - IA1: 0.078 ms | IA2: 1.392 ms
 
 Partie 4
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 4) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=4) : IA 2 vainqueur
+Nœuds créés - IA1: 7744 | IA2: 8335
+Temps moyen/coup - IA1: 0.085 ms | IA2: 6.479 ms
 
 Partie 5
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=5) : IA 2 vainqueur
+Nœuds créés - IA1: 24494 | IA2: 26116
+Temps moyen/coup - IA1: 0.038 ms | IA2: 7.215 ms
 
 Partie 6
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=6) : IA 1 vainqueur
+Nœuds créés - IA1: 122494 | IA2: 122490
+Temps moyen/coup - IA1: 0.025 ms | IA2: 22.769 ms
 
 Partie 7
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 7) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=7) : IA 2 vainqueur
+Nœuds créés - IA1: 706022 | IA2: 792652
+Temps moyen/coup - IA1: 0.049 ms | IA2: 204.624 ms
 
 Partie 8
-IA 1 (profondeur = 1) vs IA 2 (profondeur = 8) : IA 2 vainqueur
+IA 1 (profondeur=1) vs IA 2 (profondeur=8) : IA 2 vainqueur
+Nœuds créés - IA1: 1900069 | IA2: 1963904
+Temps moyen/coup - IA1: 0.026 ms | IA2: 219.626 ms
 
 Partie 10
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 2) : IA 1 vainqueur
+IA 1 (profondeur=2) vs IA 2 (profondeur=2) : IA 1 vainqueur
+Nœuds créés - IA1: 1964878 | IA2: 1964875
+Temps moyen/coup - IA1: 0.029 ms | IA2: 0.028 ms
 
 Partie 11
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 3) : Match nul
+IA 1 (profondeur=2) vs IA 2 (profondeur=3) : IA 1 vainqueur
+Nœuds créés - IA1: 1968177 | IA2: 1968160
+Temps moyen/coup - IA1: 0.036 ms | IA2: 0.184 ms
 
 Partie 12
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 4) : IA 2 vainqueur
+IA 1 (profondeur=2) vs IA 2 (profondeur=4) : IA 1 vainqueur
+Nœuds créés - IA1: 1977878 | IA2: 1977875
+Temps moyen/coup - IA1: 0.033 ms | IA2: 0.505 ms
 
 Partie 13
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+IA 1 (profondeur=2) vs IA 2 (profondeur=5) : IA 1 vainqueur
+Nœuds créés - IA1: 2008332 | IA2: 2008285
+Temps moyen/coup - IA1: 0.067 ms | IA2: 5.027 ms
 
 Partie 14
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 6) : IA 1 vainqueur
+IA 1 (profondeur=2) vs IA 2 (profondeur=6) : IA 1 vainqueur
+Nœuds créés - IA1: 2116669 | IA2: 2116663
+Temps moyen/coup - IA1: 0.042 ms | IA2: 8.304 ms
 
 Partie 15
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 7) : IA 2 vainqueur
+IA 1 (profondeur=2) vs IA 2 (profondeur=7) : IA 1 vainqueur
+Nœuds créés - IA1: 2554497 | IA2: 2554487
+Temps moyen/coup - IA1: 0.047 ms | IA2: 41.436 ms
 
 Partie 16
-IA 1 (profondeur = 2) vs IA 2 (profondeur = 8) : IA 2 vainqueur
+IA 1 (profondeur=2) vs IA 2 (profondeur=8) : IA 1 vainqueur
+Nœuds créés - IA1: 4913501 | IA2: 4913498
+Temps moyen/coup - IA1: 0.039 ms | IA2: 222.166 ms
 
 Partie 19
-IA 1 (profondeur = 3) vs IA 2 (profondeur = 3) : IA 2 vainqueur
+IA 1 (profondeur=3) vs IA 2 (profondeur=3) : IA 2 vainqueur
+Nœuds créés - IA1: 4918650 | IA2: 4918766
+Temps moyen/coup - IA1: 0.239 ms | IA2: 0.224 ms
 
 Partie 20
-IA 1 (profondeur = 3) vs IA 2 (profondeur = 4) : IA 1 vainqueur
+IA 1 (profondeur=3) vs IA 2 (profondeur=4) : IA 2 vainqueur
+Nœuds créés - IA1: 4927828 | IA2: 4927832
+Temps moyen/coup - IA1: 0.116 ms | IA2: 0.425 ms
 
 Partie 21
-IA 1 (profondeur = 3) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+IA 1 (profondeur=3) vs IA 2 (profondeur=5) : IA 1 vainqueur
+Nœuds créés - IA1: 4954070 | IA2: 4954040
+Temps moyen/coup - IA1: 0.158 ms | IA2: 2.293 ms
 
 Partie 22
-IA 1 (profondeur = 3) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+IA 1 (profondeur=3) vs IA 2 (profondeur=6) : IA 2 vainqueur
+Nœuds créés - IA1: 5108133 | IA2: 5109524
+Temps moyen/coup - IA1: 0.234 ms | IA2: 15.758 ms
 
 Partie 23
-IA 1 (profondeur = 3) vs IA 2 (profondeur = 7) : IA 2 vainqueur
+IA 1 (profondeur=3) vs IA 2 (profondeur=7) : IA 1 vainqueur
+Nœuds créés - IA1: 5693218 | IA2: 5693147
+Temps moyen/coup - IA1: 0.272 ms | IA2: 85.434 ms
 
 Partie 24
-IA 1 (profondeur = 3) vs IA 2 (profondeur = 8) : IA 2 vainqueur
+IA 1 (profondeur=3) vs IA 2 (profondeur=8) : IA 2 vainqueur
+Nœuds créés - IA1: 7244384 | IA2: 7244388
+Temps moyen/coup - IA1: 0.179 ms | IA2: 195.666 ms
 
 Partie 28
-IA 1 (profondeur = 4) vs IA 2 (profondeur = 4) : Match nul
+IA 1 (profondeur=4) vs IA 2 (profondeur=4) : IA 1 vainqueur
+Nœuds créés - IA1: 7260206 | IA2: 7260187
+Temps moyen/coup - IA1: 0.596 ms | IA2: 0.648 ms
 
 Partie 29
-IA 1 (profondeur = 4) vs IA 2 (profondeur = 5) : Match nul
+IA 1 (profondeur=4) vs IA 2 (profondeur=5) : IA 2 vainqueur
+Nœuds créés - IA1: 7279059 | IA2: 7281267
+Temps moyen/coup - IA1: 0.989 ms | IA2: 3.389 ms
 
 Partie 30
-IA 1 (profondeur = 4) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+IA 1 (profondeur=4) vs IA 2 (profondeur=6) : IA 1 vainqueur
+Nœuds créés - IA1: 7456066 | IA2: 7455891
+Temps moyen/coup - IA1: 0.917 ms | IA2: 19.687 ms
 
 Partie 31
-IA 1 (profondeur = 4) vs IA 2 (profondeur = 7) : IA 1 vainqueur
+IA 1 (profondeur=4) vs IA 2 (profondeur=7) : IA 2 vainqueur
+Nœuds créés - IA1: 7849740 | IA2: 7853983
+Temps moyen/coup - IA1: 0.787 ms | IA2: 47.357 ms
 
 Partie 32
-IA 1 (profondeur = 4) vs IA 2 (profondeur = 8) : IA 2 vainqueur
+IA 1 (profondeur=4) vs IA 2 (profondeur=8) : IA 2 vainqueur
+Nœuds créés - IA1: 8816986 | IA2: 8817422
+Temps moyen/coup - IA1: 0.602 ms | IA2: 122.376 ms
 
 Partie 37
-IA 1 (profondeur = 5) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+IA 1 (profondeur=5) vs IA 2 (profondeur=5) : IA 1 vainqueur
+Nœuds créés - IA1: 8878157 | IA2: 8878152
+Temps moyen/coup - IA1: 3.796 ms | IA2: 2.813 ms
 
 Partie 38
-IA 1 (profondeur = 5) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+IA 1 (profondeur=5) vs IA 2 (profondeur=6) : IA 1 vainqueur
+Nœuds créés - IA1: 9101073 | IA2: 9101057
+Temps moyen/coup - IA1: 3.679 ms | IA2: 14.243 ms
 
 Partie 39
-IA 1 (profondeur = 5) vs IA 2 (profondeur = 7) : IA 2 vainqueur
+IA 1 (profondeur=5) vs IA 2 (profondeur=7) : IA 2 vainqueur
+Nœuds créés - IA1: 9480956 | IA2: 9488869
+Temps moyen/coup - IA1: 4.095 ms | IA2: 80.906 ms
 
 Partie 40
-IA 1 (profondeur = 5) vs IA 2 (profondeur = 8) : IA 1 vainqueur
+IA 1 (profondeur=5) vs IA 2 (profondeur=8) : IA 2 vainqueur
+Nœuds créés - IA1: 11246619 | IA2: 11284118
+Temps moyen/coup - IA1: 4.771 ms | IA2: 334.241 ms
 
 Partie 46
-IA 1 (profondeur = 6) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+IA 1 (profondeur=6) vs IA 2 (profondeur=6) : IA 2 vainqueur
+Nœuds créés - IA1: 11462511 | IA2: 11476766
+Temps moyen/coup - IA1: 31.258 ms | IA2: 34.490 ms
 
 Partie 47
-IA 1 (profondeur = 6) vs IA 2 (profondeur = 7) : IA 1 vainqueur
+IA 1 (profondeur=6) vs IA 2 (profondeur=7) : IA 1 vainqueur
+Nœuds créés - IA1: 12572134 | IA2: 12568825
+Temps moyen/coup - IA1: 27.227 ms | IA2: 145.256 ms
 
 Partie 48
-IA 1 (profondeur = 6) vs IA 2 (profondeur = 8) : IA 2 vainqueur
+IA 1 (profondeur=6) vs IA 2 (profondeur=8) : IA 1 vainqueur
+Nœuds créés - IA1: 14685222 | IA2: 14685130
+Temps moyen/coup - IA1: 14.379 ms | IA2: 254.010 ms
 
 Partie 55
-IA 1 (profondeur = 7) vs IA 2 (profondeur = 7) : IA 2 vainqueur
+IA 1 (profondeur=7) vs IA 2 (profondeur=7) : IA 1 vainqueur
+Nœuds créés - IA1: 15206898 | IA2: 15158407
+Temps moyen/coup - IA1: 84.777 ms | IA2: 72.570 ms
 
 Partie 56
-IA 1 (profondeur = 7) vs IA 2 (profondeur = 8) : IA 1 vainqueur
+IA 1 (profondeur=7) vs IA 2 (profondeur=8) : IA 2 vainqueur
+Nœuds créés - IA1: 16867450 | IA2: 16877725
+Temps moyen/coup - IA1: 41.877 ms | IA2: 146.074 ms
 
 Partie 64
-IA 1 (profondeur = 8) vs IA 2 (profondeur = 8) : IA 2 vainqueur
+IA 1 (profondeur=8) vs IA 2 (profondeur=8) : IA 2 vainqueur
+Nœuds créés - IA1: 19853604 | IA2: 19853755
+Temps moyen/coup - IA1: 166.708 ms | IA2: 159.818 ms
 

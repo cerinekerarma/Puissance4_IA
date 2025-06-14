@@ -146,17 +146,16 @@ public class Plateau {
         // Poids exponentiels pour les alignements de jetons
         return 1000 * jetonsAlignes[4] + 50 * jetonsAlignes[3] + 5 * jetonsAlignes[2] + 1 * jetonsAlignes[1];
 
-        /*
+
         // Version 2 - Évaluation offensive
         // Favorise davantage les alignements de 3 jetons (plus agressive)
-        return 10000 * jetonsAlignes[4] + 200 * jetonsAlignes[3] + 10 * jetonsAlignes[2] + 1 * jetonsAlignes[1];
-        */
+        //return 10000 * jetonsAlignes[4] + 200 * jetonsAlignes[3] + 10 * jetonsAlignes[2] + 1 * jetonsAlignes[1];
 
-        /*
+
         // Version 3 - Évaluation défensive
         // Ignore les alignements de 1 jeton et réduit l'importance des petits alignements
-        return 1000 * jetonsAlignes[4] + 30 * jetonsAlignes[3] + 2 * jetonsAlignes[2];
-        */
+        //return 1000 * jetonsAlignes[4] + 30 * jetonsAlignes[3] + 2 * jetonsAlignes[2];
+
 
 
     }

@@ -35,4 +35,13 @@ public class AlphaBeta extends Minimax{
         return JoueurMinBase(n, p, alpha, beta);
     }
 
+    public static int getNoeudsCrees() {
+        return Minimax.getNoeudsCrees(); // Hérite du compteur de Minimax
+    }
+
+    public static void resetCompteurNoeuds() {
+        Minimax.resetCompteurNoeuds(); // Réinitialise le compteur
+    }
+
+
 }

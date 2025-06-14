@@ -3,25 +3,33 @@ package Algorithmes;
 import Puissance4.*;
 
 public class Minimax {
-    protected Algorithmes algo; // Type d'algorithme utilisé (MINIMAX ou ALPHA_BETA)
-    protected int tokenJoueurMax; // Token du joueur MAX
-    protected int tokenJoueurMin; // Token du joueur MIN
+    protected Algorithmes algo;
+    protected int tokenJoueurMax;
+    protected int tokenJoueurMin;
+    private static int noeudsCrees = 0; // Compteur statique pour tous les Minimax
 
-    // Constructeur initialisant les paramètres du Minimax
     public Minimax(int tokenJoueurMax, int tokenJoueurMin) {
         this.tokenJoueurMax = tokenJoueurMax;
         this.tokenJoueurMin = tokenJoueurMin;
-        this.algo = Algorithmes.MINIMAX; // Algorithme par défaut
+        this.algo = Algorithmes.MINIMAX;
     }
 
     /**
-     * Lance l'algorithme Minimax à partir du nœud racine.
-     *
-     * @param racine      Nœud racine de l'arbre de recherche
-     * @param profondeurMax  Profondeur maximale de recherche
-     * @return Le meilleur coup trouvé
+     * Réinitialise le compteur de nœuds (à appeler avant chaque nouvelle recherche)
      */
+    public static void resetCompteurNoeuds() {
+        noeudsCrees = 0;
+    }
+
+    /**
+     * @return Le nombre total de nœuds créés lors de la dernière recherche
+     */
+    public static int getNoeudsCrees() {
+        return noeudsCrees;
+    }
+
     public int minimax(Noeud racine, int profondeurMax) {
+        resetCompteurNoeuds(); // Réinitialise avant chaque nouvelle recherche
         return JoueurMax(racine, profondeurMax).getA();
     }
 
@@ -34,6 +42,8 @@ public class Minimax {
     }
 
     protected ActionValeur JoueurMaxBase(Noeud n, int p, Double alpha, Double beta) {
+        noeudsCrees++; // Incrémente à chaque nœud visité
+
         if (n.estFeuille() || p == 0) {
             return new ActionValeur((double) n.getPlateau().evaluation(tokenJoueurMax, tokenJoueurMin), null);
         }
@@ -61,6 +71,8 @@ public class Minimax {
     }
 
     protected ActionValeur JoueurMinBase(Noeud n, int p, Double alpha, Double beta) {
+        noeudsCrees++; // Incrémente aussi dans JoueurMinBase
+
         if (n.estFeuille() || p == 0) {
             return new ActionValeur((double) n.getPlateau().evaluation(tokenJoueurMax, tokenJoueurMin), null);
         }
@@ -86,6 +98,4 @@ public class Minimax {
 
         return new ActionValeur(u, a);
     }
-
 }
-

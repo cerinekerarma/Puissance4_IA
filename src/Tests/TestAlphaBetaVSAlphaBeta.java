@@ -1,99 +1,116 @@
 package Tests;
 
 import Puissance4.*;
+import Algorithmes.AlphaBeta;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Puissance4.*;
-
 public class TestAlphaBetaVSAlphaBeta {
-// si apres avoir lancé, vous avez un outOfMemoryError, changer la capacite de RAM a 4Go: Run > Edit Configurations > VM options : -Xmx4G
     public static void main(String[] args) {
-        // Profondeurs à tester
-        int[] profondeurs = {3, 5, 7, 9, 10};
+        int[] profondeurs = {1,2,3,4,5,6,7,8};
         StringBuilder resultats = new StringBuilder();
 
-        // Fichier de sortie
         String fichierResultats = "resultats/resultats_tests_alphabeta_vs_alphabeta.txt";
 
         try (FileWriter writer = new FileWriter(fichierResultats)) {
-            // En-tête du fichier
             writer.write("Résultats des tests AlphaBeta vs AlphaBeta\n\n");
+            writer.write("Format : IA 1 (profondeur) vs IA 2 (profondeur) | Vainqueur | Nœuds IA1 | Nœuds IA2 | Temps IA1 (ms) | Temps IA2 (ms)\n\n");
 
-            // Tests pour chaque combinaison de profondeurs
             for (int i = 0; i < profondeurs.length; i++) {
                 for (int j = i; j < profondeurs.length; j++) {
                     int profondeur1 = profondeurs[i];
                     int profondeur2 = profondeurs[j];
 
-                    // Jouer la partie
-                    int resultat = jouerPartieAlphaBeta(profondeur1, profondeur2);
+                    // Jouer la partie avec mesure des métriques
+                    PartieResultat resultat = jouerPartieAlphaBeta(profondeur1, profondeur2);
 
                     // Enregistrer le résultat
                     String resultatPartie = String.format(
-                            "Partie %d\nIA 1 (profondeur = %d) vs IA 2 (profondeur = %d) : %s\n\n",
+                            "Partie %d\nIA 1 (profondeur=%d) vs IA 2 (profondeur=%d) : %s\n" +
+                                    "Nœuds créés - IA1: %d | IA2: %d\n" +
+                                    "Temps moyen/coup - IA1: %.3f ms | IA2: %.3f ms\n\n",
                             (i * profondeurs.length) + j + 1,
                             profondeur1,
                             profondeur2,
-                            formaterResultat(resultat)
+                            formaterResultat(resultat.vainqueur),
+                            resultat.noeudsIA1,
+                            resultat.noeudsIA2,
+                            resultat.tempsMoyenIA1,
+                            resultat.tempsMoyenIA2
                     );
 
                     writer.write(resultatPartie);
-                    resultats.append(resultatPartie);
-
-                    // Afficher progression dans la console
-                    System.out.println(resultatPartie);
+                    System.out.print(resultatPartie);
                 }
             }
-
-            System.out.println("Tous les tests ont été complétés. Résultats enregistrés dans " + fichierResultats);
+            System.out.println("Tests complétés. Résultats dans " + fichierResultats);
         } catch (IOException e) {
-            System.err.println("Erreur lors de l'écriture du fichier : " + e.getMessage());
+            System.err.println("Erreur fichier: " + e.getMessage());
         }
     }
 
-    private static int jouerPartieAlphaBeta(int profondeur1, int profondeur2) {
+    private static class PartieResultat {
+        int vainqueur;
+        int noeudsIA1;
+        int noeudsIA2;
+        double tempsMoyenIA1;
+        double tempsMoyenIA2;
+    }
+
+    private static PartieResultat jouerPartieAlphaBeta(int profondeur1, int profondeur2) {
         Jeu jeu = Jeu.initialiserJeu();
         List<Joueur> joueurs = new ArrayList<>();
+        PartieResultat resultat = new PartieResultat();
+        int totalCoupsIA1 = 0, totalCoupsIA2 = 0;
+        long tempsTotalIA1 = 0, tempsTotalIA2 = 0;
 
-        // Création des deux IA AlphaBeta avec les profondeurs spécifiées
         joueurs.add(new Joueur(Algorithmes.ALPHA_BETA, profondeur1));
         joueurs.add(new Joueur(Algorithmes.ALPHA_BETA, profondeur2));
 
-        // Démarrer la partie (sans affichage)
-        return demarrerPartieSansInterface(jeu, joueurs);
-    }
-
-    private static int demarrerPartieSansInterface(Jeu jeu, List<Joueur> joueurs) {
         int jetonActuel = 1;
-        int jetonAdversaire;
-        boolean partieFinie;
+        int tours = 0;
+        final int MAX_TOURS = 100;
 
-        while (true) {
-            jetonAdversaire = 3 - jetonActuel;
+        while (tours++ < MAX_TOURS) {
+            int jetonAdversaire = 3 - jetonActuel;
             Joueur joueur = joueurs.get(jetonActuel - 1);
 
-            // L'IA joue son coup
-            partieFinie = jeu.jouerIA(joueur, jetonActuel, jetonAdversaire, false);
+            // Mesure du temps et des nœuds
+            long debut = System.nanoTime();
+            boolean fin = jeu.jouerIA(joueur, jetonActuel, jetonAdversaire, false);
+            long duree = System.nanoTime() - debut;
 
-            if (partieFinie) {
-                return jeu.getPlateau().getVainqueur();
+            if (jetonActuel == 1) {
+                tempsTotalIA1 += duree;
+                totalCoupsIA1++;
+                resultat.noeudsIA1 = AlphaBeta.getNoeudsCrees();
+            } else {
+                tempsTotalIA2 += duree;
+                totalCoupsIA2++;
+                resultat.noeudsIA2 = AlphaBeta.getNoeudsCrees();
             }
 
-            // Passer au joueur suivant
+            if (fin) {
+                resultat.vainqueur = jeu.getPlateau().getVainqueur();
+                break;
+            }
             jetonActuel = 3 - jetonActuel;
         }
+
+        // Calcul des temps moyens
+        resultat.tempsMoyenIA1 = totalCoupsIA1 > 0 ? (tempsTotalIA1 / 1_000_000.0) / totalCoupsIA1 : 0;
+        resultat.tempsMoyenIA2 = totalCoupsIA2 > 0 ? (tempsTotalIA2 / 1_000_000.0) / totalCoupsIA2 : 0;
+
+        return resultat;
     }
 
     private static String formaterResultat(int resultat) {
-        if (resultat == 1) {
-            return "IA 1 vainqueur";
-        } else if (resultat == 2) {
-            return "IA 2 vainqueur";
-        } else {
-            return "Match nul";
+        switch (resultat) {
+            case 1: return "IA 1 vainqueur";
+            case 2: return "IA 2 vainqueur";
+            default: return "Match nul";
         }
     }
 }

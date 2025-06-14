@@ -1,29 +1,57 @@
 package Puissance4;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Random;
 
 public class Noeud {
     private Plateau plateau;
-    private HashMap<Integer, Boolean> actionsRealisees;
     private List<Noeud> fils;
     private Noeud parent;
     private int nbVisites;
     private double nbVictoires;
     private int dernierCoup;
     private int profondeur;
+    private List<Integer> actionsPossibles;
+    private List<Integer> actionsTentees;
+    private static final Random random = new Random();
 
-    public Noeud(Plateau plateau, HashMap<Integer, Boolean> actionsRealisees, List<Noeud> fils, Noeud parent, int nbVisites, double nbVictoires, int dernierCoup, int profondeur) {
+    // Constructeur principal
+    public Noeud(Plateau plateau, Noeud parent, int dernierCoup, int joueur) {
         this.plateau = plateau;
-        this.fils = fils;
-        this.actionsRealisees = actionsRealisees;
         this.parent = parent;
-        this.nbVisites = nbVisites;
-        this.nbVictoires = nbVictoires;
         this.dernierCoup = dernierCoup;
-        this.profondeur = profondeur;
+        this.profondeur = (parent == null) ? 0 : parent.getProfondeur() + 1;
+        this.fils = new ArrayList<>();
+        this.nbVisites = 0;
+        this.nbVictoires = 0;
+        this.actionsPossibles = plateau.colonnesValides();
+        this.actionsTentees = new ArrayList<>();
+    }
+
+    // Création de la racine
+    public static Noeud creerNoeudRacine(Plateau plateau) {
+        return new Noeud(plateau, null, -1, 0);
+    }
+
+    public int getUneActionNonTentee() {
+        List<Integer> nonTentees = new ArrayList<>(actionsPossibles);
+        nonTentees.removeAll(actionsTentees);
+        return nonTentees.isEmpty() ? -1 : nonTentees.get(random.nextInt(nonTentees.size()));
+    }
+
+    public Noeud creerFils(int colonne, int jeton) {
+        Plateau nouveauPlateau = plateau.clone();
+        nouveauPlateau.ajouterJetonDansColonne(colonne, jeton);
+
+        Noeud fils = new Noeud(nouveauPlateau, this, colonne, jeton);
+        this.fils.add(fils);
+        this.actionsTentees.add(colonne);
+        return fils;
+    }
+
+    public boolean toutesActionsRealisees() {
+        return actionsTentees.size() == actionsPossibles.size();
     }
 
     public int getDernierCoup() {
@@ -38,33 +66,6 @@ public class Noeud {
         return plateau;
     }
 
-    public HashMap<Integer, Boolean> getActionsRealisees() {
-        return actionsRealisees;
-    }
-
-    public boolean toutesActionsRealisees() {
-        for (Map.Entry<Integer, Boolean> action : actionsRealisees.entrySet()) {
-            if (!action.getValue()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public static Noeud creerNoeudRacine(Plateau plateau) {
-        Noeud nouveau = new Noeud(plateau, new HashMap<>(), new ArrayList<>(), null, 0, 0, 0, 0);
-        nouveau.reinitialiserActions();
-        return nouveau;
-    }
-
-    public void reinitialiserActions() {
-        List<Integer> colonnesValides = this.plateau.colonnesValides();
-        this.actionsRealisees = new HashMap<>();
-        for (int colonne : colonnesValides) {
-            actionsRealisees.put(colonne, false);
-        }
-    }
-
     public boolean estFeuille() {
         return this.plateau.colonnesValides().isEmpty();
     }
@@ -74,32 +75,12 @@ public class Noeud {
         return this.plateau.ajouterJetonDansColonne(colonne, jeton);
     }
 
-    public Noeud creerFils(int colonne, int jeton) {
-        Noeud enfant = Noeud.creerNoeudRacine(plateau.clone());
-        enfant.jouerAction(colonne, jeton);
-        enfant.parent = this;
-        enfant.profondeur = this.profondeur + 1;
-        this.fils.add(enfant);
-        this.actionsRealisees.put(colonne, true);
-        return enfant;
-    }
-
     public void creerTousFils(int jeton) {
         this.fils.clear();
-        reinitialiserActions();
-        List<Integer> colonnesValides = this.plateau.colonnesValides();
-        for (int colonne : colonnesValides) {
+        this.actionsTentees.clear();
+        for (int colonne : plateau.colonnesValides()) {
             this.creerFils(colonne, jeton);
         }
-    }
-
-    public int getUneActionNonTentee() {
-        for (Map.Entry<Integer, Boolean> action : actionsRealisees.entrySet()) {
-            if (!action.getValue()) {
-                return action.getKey();
-            }
-        }
-        return -1;
     }
 
     public int compterNoeuds() {
@@ -147,5 +128,13 @@ public class Noeud {
 
     public void setNbVictoires(double nbVictoires) {
         this.nbVictoires = nbVictoires;
+    }
+
+    public List<Integer> getActionsPossibles() {
+        return new ArrayList<>(actionsPossibles);
+    }
+
+    public List<Integer> getActionsTentees() {
+        return new ArrayList<>(actionsTentees);
     }
 }

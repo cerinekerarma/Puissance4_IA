@@ -1,0 +1,41 @@
+Analyse des arbres MCTS en fonction des paramètres
+
+Format: itérations=X, C=Y.YY, simulations=Z | Profondeur | Nœuds par niveau | Branche max
+--------------------------------------------------------
+
+itérations=100, C=1.00, simulations=1 | Profondeur: 2 | Nœuds/niveau: [1, 7, 7] | Branche max: 7
+itérations=100, C=1.00, simulations=5 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=100, C=1.00, simulations=10 | Profondeur: 2 | Nœuds/niveau: [1, 7, 10] | Branche max: 7
+itérations=100, C=10.00, simulations=1 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=100, C=10.00, simulations=5 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=100, C=10.00, simulations=10 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=100, C=20.00, simulations=1 | Profondeur: 0 | Nœuds/niveau: [1] | Branche max: 5
+itérations=100, C=20.00, simulations=5 | Profondeur: 0 | Nœuds/niveau: [1] | Branche max: 3
+itérations=100, C=20.00, simulations=10 | Profondeur: 0 | Nœuds/niveau: [1] | Branche max: 5
+itérations=100, C=30.00, simulations=1 | Profondeur: 0 | Nœuds/niveau: [1] | Branche max: 4
+itérations=100, C=30.00, simulations=5 | Profondeur: 0 | Nœuds/niveau: [1] | Branche max: 4
+itérations=100, C=30.00, simulations=10 | Profondeur: 1 | Nœuds/niveau: [1, 6] | Branche max: 7
+itérations=500, C=1.00, simulations=1 | Profondeur: 4 | Nœuds/niveau: [1, 7, 29, 54, 7] | Branche max: 7
+itérations=500, C=1.00, simulations=5 | Profondeur: 3 | Nœuds/niveau: [1, 7, 48, 40] | Branche max: 7
+itérations=500, C=1.00, simulations=10 | Profondeur: 3 | Nœuds/niveau: [1, 7, 49, 21] | Branche max: 7
+itérations=500, C=10.00, simulations=1 | Profondeur: 2 | Nœuds/niveau: [1, 7, 26] | Branche max: 7
+itérations=500, C=10.00, simulations=5 | Profondeur: 2 | Nœuds/niveau: [1, 7, 12] | Branche max: 7
+itérations=500, C=10.00, simulations=10 | Profondeur: 2 | Nœuds/niveau: [1, 7, 7] | Branche max: 7
+itérations=500, C=20.00, simulations=1 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=500, C=20.00, simulations=5 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=500, C=20.00, simulations=10 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=500, C=30.00, simulations=1 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=500, C=30.00, simulations=5 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=500, C=30.00, simulations=10 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=1000, C=1.00, simulations=1 | Profondeur: 5 | Nœuds/niveau: [1, 7, 41, 93, 28, 2] | Branche max: 7
+itérations=1000, C=1.00, simulations=5 | Profondeur: 4 | Nœuds/niveau: [1, 7, 47, 137, 6] | Branche max: 7
+itérations=1000, C=1.00, simulations=10 | Profondeur: 4 | Nœuds/niveau: [1, 7, 49, 112, 2] | Branche max: 7
+itérations=1000, C=10.00, simulations=1 | Profondeur: 2 | Nœuds/niveau: [1, 7, 42] | Branche max: 7
+itérations=1000, C=10.00, simulations=5 | Profondeur: 2 | Nœuds/niveau: [1, 7, 49] | Branche max: 7
+itérations=1000, C=10.00, simulations=10 | Profondeur: 2 | Nœuds/niveau: [1, 7, 49] | Branche max: 7
+itérations=1000, C=20.00, simulations=1 | Profondeur: 2 | Nœuds/niveau: [1, 7, 11] | Branche max: 7
+itérations=1000, C=20.00, simulations=5 | Profondeur: 2 | Nœuds/niveau: [1, 7, 28] | Branche max: 7
+itérations=1000, C=20.00, simulations=10 | Profondeur: 2 | Nœuds/niveau: [1, 7, 14] | Branche max: 7
+itérations=1000, C=30.00, simulations=1 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7
+itérations=1000, C=30.00, simulations=5 | Profondeur: 2 | Nœuds/niveau: [1, 7, 9] | Branche max: 7
+itérations=1000, C=30.00, simulations=10 | Profondeur: 1 | Nœuds/niveau: [1, 7] | Branche max: 7

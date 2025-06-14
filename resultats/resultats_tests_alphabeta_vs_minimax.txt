@@ -15,4 +15,6 @@ AlphaBeta: 100.0% victoires | Minimax: 0.0% victoires | Nuls: 0.0%
 === Profondeur 5 ===
 AlphaBeta: 100.0% victoires | Minimax: 0.0% victoires | Nuls: 0.0%
 
-=== Pr
+=== Profondeur 6 ===
+AlphaBeta: 0.0% victoires | Minimax: 100.0% victoires | Nuls: 0.0%
+

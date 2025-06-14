@@ -1,0 +1,112 @@
+Résultats des tests Minimax vs Minimax
+
+Format : Minimax1(profondeur) vs Minimax2(profondeur)
+
+Partie 1
+IA 1 (profondeur = 1) vs IA 2 (profondeur = 1) : IA 2 vainqueur
+
+Partie 2
+IA 1 (profondeur = 1) vs IA 2 (profondeur = 2) : IA 2 vainqueur
+
+Partie 3
+IA 1 (profondeur = 1) vs IA 2 (profondeur = 3) : IA 2 vainqueur
+
+Partie 4
+IA 1 (profondeur = 1) vs IA 2 (profondeur = 4) : IA 2 vainqueur
+
+Partie 5
+IA 1 (profondeur = 1) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+
+Partie 6
+IA 1 (profondeur = 1) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+
+Partie 7
+IA 1 (profondeur = 2) vs IA 2 (profondeur = 1) : IA 2 vainqueur
+
+Partie 8
+IA 1 (profondeur = 2) vs IA 2 (profondeur = 2) : IA 1 vainqueur
+
+Partie 9
+IA 1 (profondeur = 2) vs IA 2 (profondeur = 3) : Match nul
+
+Partie 10
+IA 1 (profondeur = 2) vs IA 2 (profondeur = 4) : IA 2 vainqueur
+
+Partie 11
+IA 1 (profondeur = 2) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+
+Partie 12
+IA 1 (profondeur = 2) vs IA 2 (profondeur = 6) : IA 1 vainqueur
+
+Partie 13
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 1) : IA 2 vainqueur
+
+Partie 14
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 2) : IA 2 vainqueur
+
+Partie 15
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 3) : IA 2 vainqueur
+
+Partie 16
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 4) : IA 1 vainqueur
+
+Partie 17
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+
+Partie 18
+IA 1 (profondeur = 3) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+
+Partie 19
+IA 1 (profondeur = 4) vs IA 2 (profondeur = 1) : IA 1 vainqueur
+
+Partie 20
+IA 1 (profondeur = 4) vs IA 2 (profondeur = 2) : IA 2 vainqueur
+
+Partie 21
+IA 1 (profondeur = 4) vs IA 2 (profondeur = 3) : IA 1 vainqueur
+
+Partie 22
+IA 1 (profondeur = 4) vs IA 2 (profondeur = 4) : Match nul
+
+Partie 23
+IA 1 (profondeur = 4) vs IA 2 (profondeur = 5) : Match nul
+
+Partie 24
+IA 1 (profondeur = 4) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+
+Partie 25
+IA 1 (profondeur = 5) vs IA 2 (profondeur = 1) : IA 1 vainqueur
+
+Partie 26
+IA 1 (profondeur = 5) vs IA 2 (profondeur = 2) : IA 2 vainqueur
+
+Partie 27
+IA 1 (profondeur = 5) vs IA 2 (profondeur = 3) : IA 1 vainqueur
+
+Partie 28
+IA 1 (profondeur = 5) vs IA 2 (profondeur = 4) : IA 1 vainqueur
+
+Partie 29
+IA 1 (profondeur = 5) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+
+Partie 30
+IA 1 (profondeur = 5) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+
+Partie 31
+IA 1 (profondeur = 6) vs IA 2 (profondeur = 1) : IA 1 vainqueur
+
+Partie 32
+IA 1 (profondeur = 6) vs IA 2 (profondeur = 2) : IA 1 vainqueur
+
+Partie 33
+IA 1 (profondeur = 6) vs IA 2 (profondeur = 3) : IA 2 vainqueur
+
+Partie 34
+IA 1 (profondeur = 6) vs IA 2 (profondeur = 4) : IA 1 vainqueur
+
+Partie 35
+IA 1 (profondeur = 6) vs IA 2 (profondeur = 5) : IA 2 vainqueur
+
+Partie 36
+IA 1 (profondeur = 6) vs IA 2 (profondeur = 6) : IA 2 vainqueur
+

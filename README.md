@@ -47,3 +47,14 @@ Un notebook Python permet d’analyser et de visualiser les résultats des tests
 > **`Puissance4_notebook.ipynb`**
 
 Ce notebook lit les fichiers générés, calcule des statistiques (taux de réussite, comparaisons) et produit des graphiques pour illustrer les performances des algorithmes.
+
+## Rapport
+
+Notre rapport `Rapport_IA3_GALICHET_KERARMA.pdf` regroupe l’ensemble du travail réalisé, explique la logique de chaque partie, montre les résultats obtenus et propose une interprétation claire.
+Il permet de comprendre les forces et limites de chaque algorithme à travers des confrontations simulées et l’analyse des arbres de recherche générés.
+
+## Auteurs
+
+**Amaury Galichet** & **Cerine KERARMA**  
+4A Informatique, Polytech Lyon  
+Dans le cadre du cours *Intelligence Artificielle - Partie 3*, encadré par **M. Stéphane Bonnevay**

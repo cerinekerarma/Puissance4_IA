@@ -10,7 +10,6 @@ Ce projet a pour objectif de développer une intelligence artificielle pour le j
 
 L’implémentation permet non seulement de jouer contre un joueur ou une IA mais aussi de faire jouer deux IA entre elles tout en analysant les performances et la qualité des décisions prises par chaque algorithme.
 
----
 
 ## Lancer le jeu
 
@@ -21,7 +20,6 @@ Pour exécuter le jeu :
    - Choix du **mode de jeu** : joueur vs joueur, joueur vs IA, ou IA vs IA.
    - Choix de l’**algorithme** utilisé pour chaque IA (Minimax, Alpha-Beta, ou MCTS) avec des valeurs par défault.
 
----
 
 ## Tests et évaluation
 
@@ -41,7 +39,6 @@ Des tests ont été réalisés pour comparer les algorithmes selon plusieurs cri
 
 Les résultats de chaque test sont automatiquement enregistrés dans des fichiers `.txt` dans le dossier **`resultats/`**.
 
----
 
 ## Analyse statistique et visualisation
 

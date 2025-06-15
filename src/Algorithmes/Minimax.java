@@ -14,16 +14,11 @@ public class Minimax {
         this.algo = Algorithmes.MINIMAX;
     }
 
-    /**
-     * Réinitialise le compteur de nœuds (à appeler avant chaque nouvelle recherche)
-     */
     public static void resetCompteurNoeuds() {
         noeudsCrees = 0;
     }
 
-    /**
-     * @return Le nombre total de nœuds créés lors de la dernière recherche
-     */
+    // Le nombre total de nœuds créés lors de la dernière recherche
     public static int getNoeudsCrees() {
         return noeudsCrees;
     }
@@ -42,7 +37,7 @@ public class Minimax {
     }
 
     protected ActionValeur JoueurMaxBase(Noeud n, int p, Double alpha, Double beta) {
-        noeudsCrees++; // Incrémente à chaque nœud visité
+        noeudsCrees++;
 
         if (n.estFeuille() || p == 0) {
             return new ActionValeur((double) n.getPlateau().evaluation(tokenJoueurMax, tokenJoueurMin), null);
@@ -71,7 +66,7 @@ public class Minimax {
     }
 
     protected ActionValeur JoueurMinBase(Noeud n, int p, Double alpha, Double beta) {
-        noeudsCrees++; // Incrémente aussi dans JoueurMinBase
+        noeudsCrees++;
 
         if (n.estFeuille() || p == 0) {
             return new ActionValeur((double) n.getPlateau().evaluation(tokenJoueurMax, tokenJoueurMin), null);

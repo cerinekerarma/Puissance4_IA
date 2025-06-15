@@ -1,14 +1,13 @@
 package Puissance4;
 
-// Classe représentant l'état du jeu Puissance 4
+// Classe représentant l'état du jeu
 public class Etat {
 
     private int gagnant; // Le joueur gagnant
     private int derniereColonneJouee; // Dernière colonne dans laquelle un jeton a été placé
     private int dernierJoueur; // Dernier joueur ayant joué
-    private boolean termine; // Indique si le jeu est terminé
+    private boolean termine; // Voir si le jeu est terminé
 
-    // Constructeur de la classe Etat
     public Etat(int gagnant, int derniereColonneJouee, int dernierJoueur, boolean termine) {
         this.gagnant = gagnant;
         this.derniereColonneJouee = derniereColonneJouee;
@@ -16,7 +15,6 @@ public class Etat {
         this.termine = termine;
     }
 
-    // Getters et setters
     public void setGagnant(int gagnant) {
         this.gagnant = gagnant;
     }
@@ -49,7 +47,6 @@ public class Etat {
         return termine;
     }
 
-    // Vérifie si la partie est terminée
     public boolean verifierPartieTerminee(Plateau plateau) {
         if (termine) {
             return true;

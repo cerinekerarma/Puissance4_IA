@@ -7,9 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TestAlphaBetaVSMinimax {
-    // Nombre de rounds par confrontation
     private static final int NB_ROUNDS = 1000;
-    // Profondeurs max à tester
     private static final int PROFONDEUR_MAX = 6;
 
     public static void main(String[] args) {
@@ -19,7 +17,6 @@ public class TestAlphaBetaVSMinimax {
         try (FileWriter writer = new FileWriter(fichierResultats)) {
             writer.write("Résultats des tests AlphaBeta vs Minimax (sur " + NB_ROUNDS + " rounds)\n\n");
 
-            // Tests pour chaque profondeur de 1 à PROFONDEUR_MAX
             for (int profondeur = 1; profondeur <= PROFONDEUR_MAX; profondeur++) {
                 // Statistiques pour cette profondeur
                 int victoiresAlphaBeta = 0;

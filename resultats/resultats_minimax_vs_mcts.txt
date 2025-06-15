@@ -1,0 +1,15 @@
+Résultats Minimax vs MCTS
+
+Paramètres:
+- Minimax profondeur: 3
+- MCTS: 1000 itérations, 5 simulations
+
+--- Tests avec C=0.5 ---
+Résultats: Minimax 10.0% | MCTS 90.0% | Nuls 0.0%
+
+--- Tests avec C=2.0 ---
+Résultats: Minimax 54.0% | MCTS 46.0% | Nuls 0.0%
+
+--- Tests avec C=20.0 ---
+Résultats: Minimax 97.0% | MCTS 3.0% | Nuls 0.0%
+

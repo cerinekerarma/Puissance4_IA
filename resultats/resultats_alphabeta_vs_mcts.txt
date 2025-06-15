@@ -1,0 +1,15 @@
+Résultats AlphaBeta vs MCTS
+
+Paramètres:
+- AlphaBeta profondeur: 6
+- MCTS: 1000 itérations, 5 simulations
+
+--- Tests avec C=0.5 ---
+Résultats: AlphaBeta 24.0% | MCTS 76.0% | Nuls 0.0%
+
+--- Tests avec C=2.0 ---
+Résultats: AlphaBeta 84.0% | MCTS 16.0% | Nuls 0.0%
+
+--- Tests avec C=20.0 ---
+Résultats: AlphaBeta 99.0% | MCTS 1.0% | Nuls 0.0%
+

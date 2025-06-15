@@ -10,10 +10,9 @@ public class AlphaBeta extends Minimax{
      * @param tokenJoueurMax Jeton du joueur maximisant
      * @param tokenJoueurMin Jeton du joueur minimisant
      */
-    // Constructeur initialisant l'algorithme à Alpha-Bêta
     public AlphaBeta(int tokenJoueurMax, int tokenJoueurMin) {
-        super(tokenJoueurMax, tokenJoueurMin); // Appel du constructeur de la classe parent
-        this.algo = Algorithmes.ALPHA_BETA; // Définition de l'algorithme comme Alpha-Bêta
+        super(tokenJoueurMax, tokenJoueurMin);
+        this.algo = Algorithmes.ALPHA_BETA;
     }
 
     /**
@@ -36,11 +35,11 @@ public class AlphaBeta extends Minimax{
     }
 
     public static int getNoeudsCrees() {
-        return Minimax.getNoeudsCrees(); // Hérite du compteur de Minimax
+        return Minimax.getNoeudsCrees();
     }
 
     public static void resetCompteurNoeuds() {
-        Minimax.resetCompteurNoeuds(); // Réinitialise le compteur
+        Minimax.resetCompteurNoeuds();
     }
 
 

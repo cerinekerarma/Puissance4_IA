@@ -16,7 +16,6 @@ public class Noeud {
     private List<Integer> actionsTentees;
     private static final Random random = new Random();
 
-    // Constructeur principal
     public Noeud(Plateau plateau, Noeud parent, int dernierCoup, int joueur) {
         this.plateau = plateau;
         this.parent = parent;

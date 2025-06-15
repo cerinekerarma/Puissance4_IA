@@ -106,7 +106,7 @@ public class Puissance4Vue {
                 joueur.setParametre(5); // Profondeur par défaut
                 break;
             case MCTS:
-                joueur.setParametre(5); // Nombre d'itérations par défaut
+                joueur.setParametre(1000); // Nombre d'itérations par défaut
                 break;
             default:
                 joueur.setAlgorithme(Algorithmes.RANDOM);
@@ -166,7 +166,7 @@ public class Puissance4Vue {
 
         gamePanel = new JPanel(new GridLayout(6, 7, 0, 0));
         gamePanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        gamePanel.setBackground(Color.BLUE); // Fond bleu pour le plateau
+        gamePanel.setBackground(Color.BLUE);
         frame.add(gamePanel, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel(new GridLayout(1, 7));

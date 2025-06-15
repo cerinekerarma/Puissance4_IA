@@ -1,6 +1,5 @@
 package Puissance4;
 
-// Classe utilitaire contenant des méthodes pour le jeu Puissance 4
 public class Puissance4Logique {
 
     // Méthode pour cloner un tableau 2D
@@ -14,17 +13,14 @@ public class Puissance4Logique {
         return copie;
     }
 
-    // Méthode pour obtenir le maximum entre deux nombres
     public static double getMax(double a, double b) {
-        return (a > b) ? a : b;
+        return Math.max(a, b);
     }
 
-    // Méthode pour obtenir le minimum entre deux nombres
     public static double getMin(double a, double b) {
-        return (a < b) ? a : b;
+        return Math.min(a, b);
     }
 
-    // Méthode pour afficher un texte si autorisé
     public static void afficher(boolean autorise, String texte) {
         if (autorise) {
             System.out.println(texte);

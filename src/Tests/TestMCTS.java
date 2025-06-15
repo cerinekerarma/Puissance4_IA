@@ -25,7 +25,6 @@ public class TestMCTS {
             for (int iterations : iterationsList) {
                 for (double c : constantesC) {
                     for (int simulations : simulationsList) {
-                        // Création et configuration MCTS
                         MCTS mcts = new MCTS(1, 2); // Joueur 1 vs Joueur 2
                         mcts.definirConstanteC(c);
                         mcts.definirNbSimulations(simulations);
@@ -45,7 +44,7 @@ public class TestMCTS {
                         );
 
                         writer.write(ligneResultat);
-                        System.out.print(ligneResultat); // Affichage console
+                        System.out.print(ligneResultat);
                     }
                 }
             }

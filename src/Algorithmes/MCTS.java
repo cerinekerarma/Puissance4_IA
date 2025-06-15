@@ -1,9 +1,7 @@
 package Algorithmes;
 
 import Puissance4.*;
-
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 public class MCTS {
@@ -18,8 +16,6 @@ public class MCTS {
     private List<Integer> noeudsParNiveau;
     private int taillePlusGrandeBranche;
 
-
-    // Constructeur initialisant les paramètres de MCTS
     public MCTS(int jetonJoueur, int jetonAdversaire) {
         this.jetonJoueur = jetonJoueur;
         this.jetonAdversaire = jetonAdversaire;
@@ -81,17 +77,15 @@ public class MCTS {
             analyserNoeud(enfant, niveau + 1);
         }
     }
-    // Méthode pour définir le nombre de simulations
+
     public void definirNbSimulations(int nbSimulations) {
         this.nbSimulations = nbSimulations;
     }
 
-    // Méthode pour définir la constante C
     public void definirConstanteC(double constanteC) {
         this.constanteC = constanteC;
     }
 
-    // Méthode pour obtenir le dernier noeud construit
     public Noeud obtenirDernierNoeudConstruit() {
         return dernierNoeudConstruit;
     }
@@ -136,7 +130,6 @@ public class MCTS {
         return noeud;
     }
 
-
     // Expansion d'un noeud
     private Noeud expansion(Noeud noeud) {
         // Seulement si pas toutes actions tentées ET avec probabilité dépendant de C
@@ -149,7 +142,6 @@ public class MCTS {
 
         return noeud.creerFils(action, noeud.getPlateau().getJetonAdverse());
     }
-
 
     // Sélection du meilleur noeud enfant
     private Noeud meilleurEnfant(Noeud noeud, double c) {
@@ -173,6 +165,7 @@ public class MCTS {
         }
         return meilleur;
     }
+
     // Politique par défaut pour la simulation
     private double politiqueDefaut(Plateau plateau) {
         if (plateau.getEtat().estTermine()) {
